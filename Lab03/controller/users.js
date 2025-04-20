@@ -72,8 +72,6 @@ exports.update = async (req, res) => {
         let updateData = {};
         if (username) updateData.username = username;
         if (email) updateData.email = email;
-        // if (firstName) updateData.firstName = firstName;
-        // if (lastName) updateData.lastName = lastName;
         if (password) updateData.password = password;
 
         let user = await usersModel.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });

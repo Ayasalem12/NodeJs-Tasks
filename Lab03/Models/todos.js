@@ -19,7 +19,7 @@ const todosSchema = new Schema({
         default: 'to-do',
     },
 }, {
-    timestamps: true, // Adds createdAt and updatedAt
+    timestamps: true, 
 });
 
 const todoModel = model('Todos', todosSchema);
