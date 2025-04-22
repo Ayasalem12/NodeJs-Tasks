@@ -75,8 +75,7 @@ exports.getByUserId = catchAsync(async (req, res, next) => {
 // POST /todos
 exports.save = catchAsync(async (req, res, next) => {
     const { title, status } = req.validatedBody;
-    const userId = req.id; // الـ userId بييجي من الـ auth middleware
-
+    const userId = req.id; 
     // Check if user exists
     const userExists = await usersModel.findById(userId);
     if (!userExists) {

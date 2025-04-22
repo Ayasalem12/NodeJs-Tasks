@@ -7,7 +7,6 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Username is required'],
         unique: true,
-        // minlength: [8, 'Username must be at least 8 characters'],
     },
     role:{
         type:String,

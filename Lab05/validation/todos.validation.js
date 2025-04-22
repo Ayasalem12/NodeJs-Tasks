@@ -11,7 +11,6 @@ const createTodoSchema = Joi.object({
     }),
     status: Joi.string().valid('to-do', 'in progress', 'done').default('to-do').messages({
         'any.only': 'Status must be either "to-do", "in progress", or "done"',
-        // 'string.empty': 'Status is required',
         'any.required': 'Status is required',
     }),
     

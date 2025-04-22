@@ -17,10 +17,10 @@ router.post('/login', validation(loginSchema), login);
 // GET /users - Get all users
 router.get('/', getAll);
 
-// GET /users/:id - Get a user by ID (admin only)
+// GET /users/:id 
 router.get('/:id', auth, restrictTo('admin'), getById);
 
-// DELETE /users/:id - Delete a user (admin only)
+// DELETE /users/:id -
 router.delete('/:id', auth, restrictTo('admin'), deleteUser);
 
 // PATCH /users/:id - Update a user

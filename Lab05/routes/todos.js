@@ -10,19 +10,19 @@ const { createTodoSchema, updateTodoSchema } = require('../validation/todos.vali
 // GET /todos - Fetch all todos
 router.get('/', auth, restrictTo('user', 'admin'), getAll);
 
-// GET /todos/view - Render todos view (Pug)
+// GET /todos/view - Render todos view
 router.get('/view',catchAsync(async (req, res, next) => {
     const todos = await todosModel.find().populate('userId');
     res.render('todos', { todos });
 }));
 
-// GET /todos/:id - Fetch a single todo by ID
+// GET /todos/:id
 router.get('/:id', getById);
 
 // POST /todos - Create a new todo
 router.post('/',auth, restrictTo("admin","user"),validation(createTodoSchema), save);
 
-// PATCH /todos/:id - Update a todo partially
+// PATCH /todos/:id - Update a todo 
 router.patch('/:id', validation(updateTodoSchema), update);
 
 // DELETE /todos/:id - Delete a todo
